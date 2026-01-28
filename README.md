@@ -1,59 +1,193 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# URL Shortener 🔗
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern URL shortening service with QR code generation and comprehensive analytics, built with Laravel 12.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-12.x-red)
+![PHP](https://img.shields.io/badge/PHP-8.3-blue)
+![Chart.js](https://img.shields.io/badge/Chart.js-4.x-orange)
+![QR Code](https://img.shields.io/badge/QR_Code-Enabled-green)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- 🔗 **URL Shortening** - Convert long URLs into short, shareable links
+- 🎨 **Custom Short Codes** - Choose your own memorable codes or use auto-generated ones
+- 📱 **QR Code Generation** - Automatic QR code for each shortened URL
+- 📊 **Analytics Dashboard** - Track clicks, browsers, platforms, and traffic sources
+- 📈 **Visual Reports** - Charts showing clicks over time and browser distribution
+- ⏰ **Link Expiration** - Set expiration dates for time-sensitive links
+- 🔄 **Active/Inactive Toggle** - Enable or disable links without deleting
+- 🔐 **User Authentication** - Secure user accounts with Laravel Breeze
+- 📋 **Click History** - View detailed logs of all clicks with timestamps
+- 🎯 **Responsive Design** - Beautiful UI with Tailwind CSS
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Tech Stack
 
-## Learning Laravel
+- **Framework:** Laravel 12
+- **Authentication:** Laravel Breeze
+- **Database:** MySQL
+- **Frontend:** Blade Templates + Tailwind CSS
+- **Charts:** Chart.js
+- **QR Codes:** SimpleSoftwareIO/simple-qrcode
+- **PHP Version:** 8.3+
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📦 Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prerequisites
+- PHP 8.2 or higher
+- Composer
+- MySQL
+- Node.js & NPM
 
-## Laravel Sponsors
+### Setup Instructions
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Clone the repository**
+```bash
+   git clone https://github.com/papilamurie/url-shortener.git
+   cd url-shortener
+```
 
-### Premium Partners
+2. **Install dependencies**
+```bash
+   composer install
+   npm install
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **Environment setup**
+```bash
+   cp .env.example .env
+   php artisan key:generate
+```
 
-## Contributing
+4. **Configure database** (Edit `.env`)
+```env
+   DB_DATABASE=url_shortener
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Run migrations**
+```bash
+   php artisan migrate
+```
 
-## Code of Conduct
+6. **Build assets**
+```bash
+   npm run build
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. **Start the server**
+```bash
+   php artisan serve
+```
 
-## Security Vulnerabilities
+Visit: http://localhost:8000
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🎯 Usage
+
+### Creating a Short URL
+
+1. **Register/Login** to your account
+2. Click **"Create Short URL"**
+3. Enter your long URL
+4. (Optional) Add a custom short code
+5. (Optional) Add a title for organization
+6. (Optional) Set an expiration date
+7. Click **"Create"**
+
+### Sharing Your Link
+
+- **Copy** the short URL
+- **Download** the QR code
+- **Share** via social media, email, or messaging
+
+### Tracking Analytics
+
+- View **total clicks**
+- See **clicks over time** (30-day chart)
+- Analyze **browser distribution**
+- Check **platform breakdown** (Windows, Mac, Mobile)
+- Review **recent click history**
+
+## 📁 Project Structure
+```
+url-shortener/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── DashboardController.php
+│   │   ├── UrlController.php
+│   │   └── RedirectController.php
+│   └── Models/
+│       ├── Url.php
+│       └── Click.php
+├── database/
+│   └── migrations/
+│       ├── create_urls_table.php
+│       └── create_clicks_table.php
+└── resources/views/
+    ├── dashboard.blade.php
+    └── urls/
+        ├── index.blade.php
+        ├── create.blade.php
+        ├── show.blade.php
+        └── edit.blade.php
+```
+
+## 🔐 Security Features
+
+- **User Authentication** - Required for creating and managing URLs
+- **Authorization** - Users can only access their own URLs
+- **CSRF Protection** - All forms protected
+- **SQL Injection Prevention** - Eloquent ORM
+- **Unique Constraints** - Prevents duplicate short codes
+- **Password Hashing** - bcrypt encryption
+
+## 📊 Analytics Tracked
+
+- **Total Clicks** - Lifetime click count
+- **Click Timestamps** - When each click occurred
+- **Browser Detection** - Chrome, Firefox, Safari, etc.
+- **Platform Detection** - Windows, Mac, Linux, iOS, Android
+- **Referrer Tracking** - Where traffic came from
+- **IP Addresses** - Visitor IPs (for security)
+
+## 🚧 Future Enhancements
+
+- [ ] Bulk URL shortening
+- [ ] Link preview before redirect
+- [ ] Geographic location tracking
+- [ ] API for programmatic access
+- [ ] Custom domains
+- [ ] Link password protection
+- [ ] CSV export of analytics
+- [ ] Team collaboration features
+
+## 📄 License
+
+Open-source software licensed under the [MIT license](LICENSE).
+
+## 👤 Author
+
+**Your Name**
+- GitHub: [@papilamurie](https://github.com/papilamurie)
+- Portfolio: [Your Portfolio URL]
+
+## 🙏 Acknowledgments
+
+- [Laravel](https://laravel.com) - PHP Framework
+- [Tailwind CSS](https://tailwindcss.com) - CSS Framework
+- [Chart.js](https://www.chartjs.org) - Data Visualization
+- [SimpleSoftwareIO/simple-qrcode](https://github.com/SimpleSoftwareIO/simple-qrcode) - QR Code Generation
+
+---
+
+⭐ If you found this project helpful, please give it a star!
+
+## 🔗 Live Demo
+
+Try it out: [Your Deployed URL]
+
+## 📧 Contact
+
+For questions or feedback, open an issue or contact me at your.email@example.com
