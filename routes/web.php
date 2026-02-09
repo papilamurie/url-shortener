@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Route;
 
 // Home/Welcome page
 Route::get('/', function () {
-    return view('welcome');
-});
+       return view('welcome');
+   });
 
 // Auth routes (MUST come before /{shortCode})
 require __DIR__.'/auth.php';
